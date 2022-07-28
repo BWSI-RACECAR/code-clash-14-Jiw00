@@ -28,10 +28,14 @@ class Solution:
     def rotate(self,matrix):
         # type matrix: List[List[int]]
         # return: List[List[int]]
-        arr = [[]]
+        arr = [[0 for i in range(len(matrix))] for j in range(len(matrix[0]))]
+        rotate = []
         for i in range(len(matrix)-1, -1, -1):
             for j in range(len(matrix[i])):
-                arr[j].append(matrix[i][j])
+                print(i, j)
+                print("matrix: ", matrix[i][j])
+                print("arr:",arr)
+                arr[j][len(matrix)-1-i] = matrix[i][j]
         return arr
 
 
